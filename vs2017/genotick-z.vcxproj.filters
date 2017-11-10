@@ -9,8 +9,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\ZorroEvents.cpp">
+    <ClCompile Include="..\src\genotick.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\zevents.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\genotick.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\zutils.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

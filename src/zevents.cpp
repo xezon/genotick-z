@@ -3,21 +3,30 @@
 #define ZORRO_EXPECT_ALL_FUNCTIONS
 #define ZORRO_USE_EVENT_CLASS
 #include "zorro_impl.h"
+#include "genotick.h"
+
+CGenotick g_genotick;
 
 void CZorroEvents::main()
 {
+	set(EZorroFlag::OPENEND);
+	set(EZorroFlag::TICKS);
+	LookBack = 0;
+	BarPeriod = PERIOD_D1;
+	StartDate = 20130101;
+	EndDate = 20150101;
 
+	g_genotick.Init();
+
+	for (uint32_t assetId = 0; string assetName = Assets[assetId]; ++assetId)
+	{
+		asset(assetName);
+	}
 }
 
 void CZorroEvents::run()
 {
-	set(EZorroFlag::TICKS);
 
-	if (is(EStatusFlag::FIRSTRUN))
-	{
-		enterLong();
-		// your zorro code ...
-	}
 }
 
 void CZorroEvents::tick()
