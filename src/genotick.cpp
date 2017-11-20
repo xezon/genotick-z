@@ -2,7 +2,7 @@
 #pragma comment(lib, "genotickcpplib.lib")
 
 #include "genotick.h"
-#include <common/utils_log.h>
+#include <common/util_log.h>
 
 #define GENOTICK_DEBUG 0
 
@@ -15,7 +15,7 @@ bool CGenotick::Init()
 {
 	CreateConsole();
 
-	utils::LogA("Initializing Genotick Z");
+	util::clog("Initializing Genotick Z");
 
 	TGenotickCreationSettings settings;
 	settings.utf8jvmDllPath = "C:\\Program Files (x86)\\Java\\jre1.8.0_144\\bin\\client\\jvm.dll";
@@ -28,7 +28,7 @@ bool CGenotick::Init()
 
 	if (result != EGenotickResult::Success)
 	{
-		utils::LogA("Failed to start Genotick");
+		util::clog("Failed to start Genotick");
 		return false;
 	}
 	return true;
